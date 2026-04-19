@@ -111,26 +111,67 @@ nav ul li a:hover {
 
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  /* Define que cada coluna terá no mínimo 280px e no máximo 1 fração do espaço */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
   margin-top: 40px;
+  justify-content: center; /* Centraliza o grupo de cards na tela */
 }
 
 .book-card {
   background: white;
-  padding: 20px;
-  border-radius: 10px;
+  padding: 25px;
+  border-radius: 12px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-  transition: 0.3s;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  /* SOLUÇÃO: Força todos os cards a terem a mesma largura máxima e mínima no grid */
+  width: 100%;
+  max-width: 320px; /* Ajuste para o tamanho que achar melhor */
+  margin: 0 auto;
+}
+
+/* Garante que o link longo não quebre o layout */
+.btn-amazon {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+/* Garante que o link longo não quebre o layout */
+.btn-amazon {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
 }
 
 .book-card:hover {
   transform: translateY(-8px) scale(1.02);
 }
 
-.book-card img {
-  border-radius: 8px;
-  margin-bottom: 15px;
+/* O card agora é o container flexível */
+.book-card {
+  display: flex;
+  flex-direction: column; /* Organiza os itens em coluna (um abaixo do outro) */
+  align-items: center; /* Centraliza todos os itens horizontalmente */
+  text-align: center; /* Garante que o texto também fique centralizado */
+  padding: 20px;
+  background: #fff; /* Ajuste conforme sua paleta */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo específico da imagem para não flutuar */
+.book-cover {
+  display: block; /* Remove qualquer comportamento de texto da imagem */
+  max-width: 100%; /* Não deixa a imagem ser maior que o card */
+  height: auto; /* Mantém a proporção correta */
+  margin-bottom: 15px; /* Espaço entre a imagem e o título */
+  border-radius: 5px;
 }
 
 .book-card h3 {
