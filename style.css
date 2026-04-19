@@ -4,13 +4,11 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
-
 :root {
   --primary-color: #2c3e50;
   --accent-color: #a93226;
@@ -19,20 +17,17 @@ img {
   --text-color: rgb(255, 255, 255);
   --bg-light: #f9f9f9;
 }
-
 body {
   font-family: "Poppins", sans-serif;
   line-height: 1.6;
   color: var(--text-color);
   background-color: var(--bg-light);
 }
-
 h1,
 h2,
 h3 {
   font-family: "Playfair Display", serif;
 }
-
 /* Header */
 header {
   background: var(--primary-color);
@@ -42,18 +37,15 @@ header {
   top: 0;
   z-index: 1000;
 }
-
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
 nav ul {
   display: flex;
   list-style: none;
 }
-
 nav ul li a {
   text-decoration: none;
   color: white;
@@ -61,11 +53,9 @@ nav ul li a {
   font-weight: 600;
   transition: 0.3s;
 }
-
 nav ul li a:hover {
   color: var(--accent-color);
 }
-
 /* Hero */
 .hero {
   height: 70vh;
@@ -79,11 +69,9 @@ nav ul li a:hover {
   text-align: center;
   color: white;
 }
-
 .hero h1 {
   font-size: 3rem;
 }
-
 /* Botões */
 .btn-primary {
   display: inline-block;
@@ -96,19 +84,16 @@ nav ul li a:hover {
   font-weight: bold;
   transition: 0.3s;
 }
-
 .btn-primary:hover {
   background-color: #8e241a;
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
-
 /* Livros */
 .books-grid {
   padding: 60px 5%;
   text-align: center;
 }
-
 .container {
   display: grid;
   /* Define que cada coluna terá no mínimo 280px e no máximo 1 fração do espaço */
@@ -117,7 +102,6 @@ nav ul li a:hover {
   margin-top: 40px;
   justify-content: center; /* Centraliza o grupo de cards na tela */
 }
-
 .book-card {
   background: white;
   padding: 25px;
@@ -134,25 +118,21 @@ nav ul li a:hover {
   max-width: 320px; /* Ajuste para o tamanho que achar melhor */
   margin: 0 auto;
 }
-
 /* Garante que o link longo não quebre o layout */
 .btn-amazon {
   word-wrap: break-word;
   overflow-wrap: break-word;
   max-width: 100%;
 }
-
 /* Garante que o link longo não quebre o layout */
 .btn-amazon {
   word-wrap: break-word;
   overflow-wrap: break-word;
   max-width: 100%;
 }
-
 .book-card:hover {
   transform: translateY(-8px) scale(1.02);
 }
-
 /* O card agora é o container flexível */
 .book-card {
   display: flex;
@@ -164,7 +144,6 @@ nav ul li a:hover {
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
-
 /* Estilo específico da imagem para não flutuar */
 .book-cover {
   display: block; /* Remove qualquer comportamento de texto da imagem */
@@ -173,11 +152,9 @@ nav ul li a:hover {
   margin-bottom: 15px; /* Espaço entre a imagem e o título */
   border-radius: 5px;
 }
-
 .book-card h3 {
   color: var(--primary-color);
 }
-
 /* Container dos botões */
 .buttons {
   display: flex;
@@ -186,7 +163,6 @@ nav ul li a:hover {
   margin-top: 20px;
   flex-wrap: wrap; /* No celular, se não couber, um pula para baixo do outro */
 }
-
 /* Ajuste nos botões de compra (Amazon e WhatsApp) */
 .btn-amazon,
 .btn-whatsapp {
@@ -198,26 +174,17 @@ nav ul li a:hover {
   min-width: 120px; /* Garante que o botão tenha um tamanho bom para tocar */
   text-align: center;
 }
-
 /* Opcional: Adicionar uma borda sutil para definir melhor o limite do botão */
 .btn-amazon {
   color: var(--amazon-color);
   border: 1px solid var(--amazon-color);
   border-radius: 5px;
 }
-
-.btn-whatsapp {
-  color: var(--whatsapp-color);
-  border: 1px solid var(--whatsapp-color);
-  border-radius: 5px;
-}
-
 /* Sobre */
 .about-section {
   padding: 80px 5%;
   background: white;
 }
-
 .about-container {
   display: flex;
   align-items: center;
@@ -225,7 +192,6 @@ nav ul li a:hover {
   max-width: 1000px;
   margin: 0 auto;
 }
-
 .about-image img {
   width: 350px;
   height: 450px;
@@ -234,28 +200,23 @@ nav ul li a:hover {
   box-shadow: 20px 20px 0 var(--primary-color);
   transition: 0.3s;
 }
-
 .about-image img:hover {
   transform: scale(1.03);
 }
-
 .about-text h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
   color: var(--primary-color);
 }
-
 .about-text p {
   margin-bottom: 15px;
   font-size: 1.1rem;
   color: #555;
 }
-
 /* Social */
 .social-links {
   margin-top: 30px;
 }
-
 .social-links a {
   margin-right: 10px;
   text-decoration: none;
@@ -265,35 +226,29 @@ nav ul li a:hover {
   border-radius: 5px;
   transition: 0.3s;
 }
-
 .social-links a:hover {
   background: var(--accent-color);
   color: white;
 }
-
 /* Footer */
 .main-footer {
   background: #2c3e50;
   color: white;
   padding: 50px 5% 20px;
 }
-
 .footer-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 40px;
 }
-
 .footer-links a {
   color: #ccc;
   text-decoration: none;
   transition: 0.3s;
 }
-
 .footer-links a:hover {
   color: var(--accent-color);
 }
-
 /* RESPONSIVO */
 @media (max-width: 768px) {
   nav {
@@ -309,19 +264,16 @@ nav ul li a:hover {
     text-align: center;
   }
 }
-
 /* ANIMAÇÕES (SCROLL) */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
   transition: 0.8s ease;
 }
-
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
 }
-
 /* Delay */
 .delay-1 {
   transition-delay: 0.2s;
@@ -332,20 +284,17 @@ nav ul li a:hover {
 .delay-3 {
   transition-delay: 0.6s;
 }
-
 /* Container das Redes Sociais no Footer */
 .footer-social h4 {
   margin-bottom: 20px;
   font-size: 1.2rem;
   font-family: "Playfair Display", serif;
 }
-
 .social-icons {
   display: flex;
   gap: 15px; /* Espaço entre os botões */
   flex-wrap: wrap; /* Garante que não quebre em telas muito pequenas */
 }
-
 /* Estilização Geral dos Botões de Redes Sociais */
 .icon-social {
   display: inline-block;
@@ -359,7 +308,6 @@ nav ul li a:hover {
   transition: all 0.4s ease; /* Transição suave para cores e sombras */
   background: rgba(255, 255, 255, 0.05);
 }
-
 /* Efeito Hover Personalizado para Instagram */
 .icon-social[href*="instagram"]:hover {
   background: linear-gradient(
@@ -374,7 +322,6 @@ nav ul li a:hover {
   box-shadow: 0 4px 15px rgba(220, 39, 67, 0.4);
   transform: translateY(-3px); /* Leve pulo para cima */
 }
-
 /* Efeito Hover Personalizado para Facebook */
 .icon-social[href*="facebook"]:hover {
   background: #1877f2;
