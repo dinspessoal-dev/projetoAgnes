@@ -1,3 +1,10 @@
+/* Reset e Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -5,19 +12,12 @@ img {
 }
 
 :root {
-  --primary-color: #2c3e50; /* Azul Profissional */
-  --accent-color: #a93226; /* Vinho Romance */
-  --amazon-color: #ff9900; /* Padrão Amazon */
-  --whatsapp-color: #25d366; /* Padrão WhatsApp */
-  --text-color: #333333;
+  --primary-color: #2c3e50;
+  --accent-color: #a93226;
+  --amazon-color: #ff9900;
+  --whatsapp-color: #25d366;
+  --text-color: #333;
   --bg-light: #f9f9f9;
-}
-
-/* Reset básico de ADS */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 body {
@@ -33,7 +33,7 @@ h3 {
   font-family: "Playfair Display", serif;
 }
 
-/* Header & Nav */
+/* Header */
 header {
   background: var(--primary-color);
   padding: 1rem 5%;
@@ -41,14 +41,12 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  color: white;
 }
 
-nav ul li a {
-  text-decoration: none;
-  color: white; /* Contraste com o azul escuro */
-  margin-left: 20px;
-  font-weight: 600;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 nav ul {
@@ -58,25 +56,35 @@ nav ul {
 
 nav ul li a {
   text-decoration: none;
-  color: #333;
+  color: white;
   margin-left: 20px;
   font-weight: 600;
+  transition: 0.3s;
 }
 
-/* Seção Hero */
+nav ul li a:hover {
+  color: var(--accent-color);
+}
+
+/* Hero */
 .hero {
-  height: 60vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("sua-imagem-de-fundo.jpg");
+  height: 70vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("assets/capa_nos_bracos_do_promotor.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
   text-align: center;
+  color: white;
 }
 
+.hero h1 {
+  font-size: 3rem;
+}
+
+/* Botões */
 .btn-primary {
   display: inline-block;
   background: var(--accent-color);
@@ -86,16 +94,18 @@ nav ul li a {
   border-radius: 5px;
   margin-top: 20px;
   font-weight: bold;
-  transition: background 0.3s;
+  transition: 0.3s;
 }
 
 .btn-primary:hover {
-  background-color: #8e241a; /* Tom mais escuro no hover */
+  background-color: #8e241a;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Grid de Livros */
+/* Livros */
 .books-grid {
-  padding: 50px 5%;
+  padding: 60px 5%;
   text-align: center;
 }
 
@@ -106,42 +116,58 @@ nav ul li a {
   margin-top: 40px;
 }
 
+.book-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.book-card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.book-card img {
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
 .book-card h3 {
   color: var(--primary-color);
 }
 
-.book-card:hover {
-  transform: translateY(-5px);
-}
-
-.book-card img {
-  max-width: 100%;
-  border-radius: 5px;
-}
-
-/* Botões de Compra */
+/* Botões compra */
 .buttons {
   display: flex;
   justify-content: space-around;
   margin-top: 15px;
 }
 
-.btn-amazon {
-  color: var(--amazon-color);
+.btn-amazon,
+.btn-whatsapp {
   text-decoration: none;
   font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-amazon {
+  color: var(--amazon-color);
 }
 
 .btn-whatsapp {
   color: var(--whatsapp-color);
-  text-decoration: none;
-  font-weight: bold;
 }
 
-/* Seção Sobre (About) */
+.btn-amazon:hover,
+.btn-whatsapp:hover {
+  transform: scale(1.1);
+}
+
+/* Sobre */
 .about-section {
   padding: 80px 5%;
-  background-color: #fff;
+  background: white;
 }
 
 .about-container {
@@ -157,7 +183,12 @@ nav ul li a {
   height: 450px;
   object-fit: cover;
   border-radius: 15px;
-  box-shadow: 20px 20px 0px var(--primary-color);
+  box-shadow: 20px 20px 0 var(--primary-color);
+  transition: 0.3s;
+}
+
+.about-image img:hover {
+  transform: scale(1.03);
 }
 
 .about-text h2 {
@@ -172,15 +203,15 @@ nav ul li a {
   color: #555;
 }
 
+/* Social */
 .social-links {
   margin-top: 30px;
 }
 
 .social-links a {
-  margin-right: 15px;
+  margin-right: 10px;
   text-decoration: none;
   color: var(--accent-color);
-  font-weight: 600;
   border: 1px solid var(--accent-color);
   padding: 8px 15px;
   border-radius: 5px;
@@ -188,28 +219,14 @@ nav ul li a {
 }
 
 .social-links a:hover {
-  background-color: var(--accent-color);
+  background: var(--accent-color);
   color: white;
 }
 
-/* Responsividade para celulares */
-@media (max-width: 768px) {
-  .about-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about-image img {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    box-shadow: 10px 10px 0px var(--primary-color);
-  }
-}
-
+/* Footer */
 .main-footer {
-  background-color: var(--primary-color);
-  color: #fff;
+  background: var(--primary-color);
+  color: white;
   padding: 50px 5% 20px;
 }
 
@@ -217,91 +234,53 @@ nav ul li a {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 40px;
-  max-width: 1100px;
-  margin: 0 auto;
 }
 
-.footer-info h3,
-.footer-links h4,
-.footer-social h4 {
-  margin-bottom: 20px;
-  color: #fff;
-  font-family: "Playfair Display", serif;
-}
-
-.footer-links ul {
-  list-style: none;
-}
-
-.footer-links ul li {
-  margin-bottom: 10px;
-}
-
-.footer-links ul li a {
+.footer-links a {
   color: #ccc;
   text-decoration: none;
   transition: 0.3s;
 }
 
-.footer-links ul li a:hover {
+.footer-links a:hover {
   color: var(--accent-color);
 }
 
-.footer-bottom {
-  text-align: center;
-  margin-top: 50px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 0.9rem;
-  color: #aaa;
-}
-
-/* Ajuste rápido para o link do WhatsApp no rodapé */
-.footer-links a[href*="wa.me"] {
-  color: #25d366;
-  font-weight: bold;
-}
-
-/* Ajustes para Tablets e Celulares (Até 768px) */
+/* RESPONSIVO */
 @media (max-width: 768px) {
-  /* 1. Menu: Transforma em coluna para não amontoar */
   nav {
     flex-direction: column;
-    gap: 15px;
-    text-align: center;
   }
 
-  nav ul {
-    padding: 0;
-  }
-
-  nav ul li a {
-    margin: 0 10px;
-    font-size: 0.9rem;
-  }
-
-  /* 2. Hero: Ajusta o tamanho da fonte para não estourar a tela */
   .hero h1 {
     font-size: 2rem;
-    padding: 0 20px;
   }
 
-  /* 3. Cards de Livros: Garante que fiquem um abaixo do outro */
-  .container {
-    grid-template-columns: 1fr; /* Força uma única coluna */
-    padding: 0 10px;
-  }
-
-  /* 4. Imagem da Autora: Ajuste de escala */
   .about-container {
     flex-direction: column;
     text-align: center;
   }
+}
 
-  .about-image img {
-    width: 100%;
-    max-width: 280px;
-    height: auto;
-    box-shadow: 10px 10px 0px var(--primary-color);
-  }
+/* ANIMAÇÕES (SCROLL) */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delay */
+.delay-1 {
+  transition-delay: 0.2s;
+}
+.delay-2 {
+  transition-delay: 0.4s;
+}
+.delay-3 {
+  transition-delay: 0.6s;
 }
