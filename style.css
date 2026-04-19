@@ -16,7 +16,7 @@ img {
   --accent-color: #a93226;
   --amazon-color: #ff9900;
   --whatsapp-color: #25d366;
-  --text-color: #333;
+  --text-color: rgb(255, 255, 255);
   --bg-light: #f9f9f9;
 }
 
@@ -70,7 +70,7 @@ nav ul li a:hover {
 .hero {
   height: 70vh;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("assets/capa_nos_bracos_do_promotor.jpg");
+    url("assets/capa_nos_bracos_do_promotor.webp");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -266,7 +266,7 @@ nav ul li a:hover {
 
 /* Footer */
 .main-footer {
-  background: var(--primary-color);
+  background: #2c3e50;
   color: white;
   padding: 50px 5% 20px;
 }
