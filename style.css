@@ -178,31 +178,38 @@ nav ul li a:hover {
   color: var(--primary-color);
 }
 
-/* Botões compra */
+/* Container dos botões */
 .buttons {
   display: flex;
-  justify-content: space-around;
-  margin-top: 15px;
+  justify-content: center;
+  gap: 25px; /* Aumentamos o espaço entre os botões */
+  margin-top: 20px;
+  flex-wrap: wrap; /* No celular, se não couber, um pula para baixo do outro */
 }
 
+/* Ajuste nos botões de compra (Amazon e WhatsApp) */
 .btn-amazon,
 .btn-whatsapp {
   text-decoration: none;
   font-weight: bold;
   transition: 0.3s;
+  padding: 12px 20px; /* Adicionamos preenchimento para aumentar a área de clique */
+  border: 1px solid transparent; /* Reserva espaço para borda no hover */
+  min-width: 120px; /* Garante que o botão tenha um tamanho bom para tocar */
+  text-align: center;
 }
 
+/* Opcional: Adicionar uma borda sutil para definir melhor o limite do botão */
 .btn-amazon {
   color: var(--amazon-color);
+  border: 1px solid var(--amazon-color);
+  border-radius: 5px;
 }
 
 .btn-whatsapp {
   color: var(--whatsapp-color);
-}
-
-.btn-amazon:hover,
-.btn-whatsapp:hover {
-  transform: scale(1.1);
+  border: 1px solid var(--whatsapp-color);
+  border-radius: 5px;
 }
 
 /* Sobre */
