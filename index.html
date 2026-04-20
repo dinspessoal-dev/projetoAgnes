@@ -66,15 +66,19 @@
         font-weight: 600;
       }
 
+      /* ✅ HERO AJUSTADO */
       .hero {
-        height: 70vh;
+        height: 45vh; /* corrigido */
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
         color: #fff;
         position: relative;
+        padding: 1rem 5%; /* igual ao outro */
+        overflow: hidden;
       }
+
       .hero img {
         position: absolute;
         inset: 0;
@@ -82,15 +86,28 @@
         height: 100%;
         object-fit: cover;
       }
+
       .hero::after {
         content: "";
         position: absolute;
         inset: 0;
         background: rgba(0, 0, 0, 0.6);
       }
+
       .hero-content {
         position: relative;
         z-index: 2;
+        max-width: 900px;
+      }
+
+      .hero-content h1 {
+        font-size: clamp(1.6rem, 4vw, 3rem);
+        margin-bottom: 10px;
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+        margin-top: 5px;
       }
 
       .btn-primary {
@@ -100,6 +117,8 @@
         border-radius: 6px;
         font-weight: 700;
         text-decoration: none;
+        margin-top: 20px;
+        display: inline-block;
       }
     </style>
 
@@ -119,17 +138,6 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
       onload="this.rel='stylesheet'"
     />
-
-    <!-- Schema -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Agnes Zamai",
-        "jobTitle": "Escritora",
-        "url": "https://dinspessoal-dev.github.io/projetoAgnes/"
-      }
-    </script>
   </head>
 
   <body>
@@ -320,67 +328,69 @@
         }, 2000);
       });
     </script>
-  </body>
-  <!-- FOOTER -->
-  <footer class="main-footer">
-    <div class="footer-container">
-      <!-- Sobre -->
-      <div class="footer-info">
-        <h3>Agnes Zamai</h3>
-        <p>
-          Escritora de romances contemporâneos e histórias que tocam o coração.
-        </p>
-      </div>
 
-      <!-- Contatos -->
-      <div class="footer-links">
-        <h4>Contatos</h4>
-        <ul>
-          <li>
-            <a href="mailto:ortografia.az@gmail.com">
-              📧 ortografia.az@gmail.com
-            </a>
-          </li>
-          <li>
+    <!-- FOOTER -->
+    <footer class="main-footer">
+      <div class="footer-container">
+        <!-- Sobre -->
+        <div class="footer-info">
+          <h3>Agnes Zamai</h3>
+          <p>
+            Escritora de romances contemporâneos e histórias que tocam o
+            coração.
+          </p>
+        </div>
+
+        <!-- Contatos -->
+        <div class="footer-links">
+          <h4>Contatos</h4>
+          <ul>
+            <li>
+              <a href="mailto:ortografia.az@gmail.com">
+                📧 ortografia.az@gmail.com
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://wa.me/5518996835945"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                💬 WhatsApp Direto
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Redes -->
+        <div class="footer-social">
+          <h4>Redes Sociais</h4>
+          <div class="social-icons">
             <a
-              href="https://wa.me/5518996835945"
+              href="https://www.instagram.com/agneszamaiautora/"
+              class="icon-social instagram"
               target="_blank"
               rel="noopener noreferrer"
             >
-              💬 WhatsApp Direto
+              Instagram
             </a>
-          </li>
-        </ul>
-      </div>
 
-      <!-- Redes -->
-      <div class="footer-social">
-        <h4>Redes Sociais</h4>
-        <div class="social-icons">
-          <a
-            href="https://www.instagram.com/agneszamaiautora/"
-            class="icon-social instagram"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Instagram
-          </a>
-
-          <a
-            href="https://www.facebook.com/people/Autora-Agnes-Zamai/pfbid0jnu4TczmgcTB51NFqbbkuCLL2Qy6PGymEyPoKp4j6mDVm2L69c7i3EdzP87Z97Rrl/"
-            class="icon-social facebook"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Facebook
-          </a>
+            <a
+              href="https://www.facebook.com/people/Autora-Agnes-Zamai/pfbid0jnu4TczmgcTB51NFqbbkuCLL2Qy6PGymEyPoKp4j6mDVm2L69c7i3EdzP87Z97Rrl/"
+              class="icon-social facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Facebook
+            </a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Linha final -->
-    <div class="footer-bottom">
-      <p>&copy; 2024 Agnes Zamai - Desenvolvido por Diego Souza</p>
-    </div>
-  </footer>
+      <!-- Linha final -->
+      <div class="footer-bottom">
+        <p>&copy; 2024 Agnes Zamai - Desenvolvido por Diego Souza</p>
+      </div>
+    </footer>
+  </body>
 </html>
