@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Livros | Agnes Zamai</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Estilos específicos para a página de livros */
+      .page-header-img {
+        height: 40vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url("assets/capa_nos_bracos_do_promotor.webp");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+      }
+      .stars {
+        color: #f1c40f;
+        margin: 5px 0;
+        font-size: 1.1rem;
+      }
+      .resenhas-detalhadas {
+        padding: 60px 5%;
+        background: #fdfcfb;
+        text-align: center;
+      }
+      .resenha-container {
+        max-width: 900px;
+        margin: 0 auto;
+        display: grid;
+        gap: 20px;
+      }
+      .resenha-item {
+        background: white;
+        padding: 20px;
+        border-left: 5px solid #a93226;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        text-align: left;
+      }
+      .stats-bar {
+        background: #fff;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        margin-top: -30px;
+        border-radius: 8px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        z-index: 10;
+      }
+      .stat-item {
+        text-align: center;
+      }
+      .stat-item strong {
+        display: block;
+        font-size: 1.5rem;
+        color: #a93226;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">Agnes Zamai</div>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="livros.html">Livros</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="page-header-img">
+      <h1>Minhas Obras</h1>
+    </section>
+
+    <div class="stats-bar">
+      <div class="stat-item">
+        <strong>+2.8M</strong><span>Paginas Lidas</span>
+      </div>
+      <div class="stat-item">
+        <strong>4.7</strong><span>Avaliação Média</span>
+      </div>
+      <div class="stat-item"><strong>600+</strong><span>Seguidores</span></div>
+    </div>
+
+    <main style="padding: 60px 5%">
+      <div
+        class="container"
+        style="
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 30px;
+        "
+      >
+        <div class="book-card">
+          <img
+            src="assets/capa_nos_bracos_do_promotor.webp"
+            width="250"
+            alt="Nos braços do promotor"
+          />
+          <div class="stars">★★★★★</div>
+          <h3>Nos braços do promotor</h3>
+          <p>O romance mais lido.</p>
+          <a
+            href="https://www.amazon.com.br/Nos-bra%C3%A7os-promotor-Agnes-Zamai-ebook/dp/B0D9PT675X"
+            class="btn-amazon"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Ver na Amazon</a
+          >
+        </div>
+
+        <div class="book-card">
+          <img
+            src="assets/capa_nove_meses_para_amar.webp"
+            width="250"
+            alt="Nove meses para amar"
+          />
+          <div class="stars">★★★★★</div>
+          <h3>Nove meses para amar</h3>
+          <p>Uma história de superação.</p>
+          <a
+            href="https://www.amazon.com.br/Nove-Meses-Para-Agnes-Zamai-ebook/dp/B096WNJ54G"
+            class="btn-amazon"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Ver na Amazon</a
+          >
+        </div>
+
+        <div class="book-card">
+          <img
+            src="assets/capa_uma_jogada_arriscada.webp"
+            width="250"
+            alt="Uma jogada arriscada"
+          />
+          <div class="stars">★★★★★</div>
+          <h3>Uma jogada arriscada</h3>
+          <p>Intensidade e paixão.</p>
+          <a
+            href="https://www.amazon.com.br/Uma-jogada-arriscada-Agnes-Zamai-ebook/dp/B0DSVCLTVJ"
+            class="btn-amazon"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Ver na Amazon</a
+          >
+        </div>
+      </div>
+    </main>
+
+    <section class="resenhas-detalhadas">
+      <h2>Resenhas em Destaque</h2>
+      <div class="resenha-container">
+        <div class="resenha-item">
+          <p>
+            "Agnes tem o poder de nos fazer sentir cada emoção dos personagens.
+            Impossível parar de ler!"
+          </p>
+          <strong>- Maria Silva (Amazon Brasil)</strong>
+        </div>
+        <div class="resenha-item">
+          <p>
+            "Escrita fluida, romances quentes e tramas muito bem amarradas.
+            Recomendo todos!"
+          </p>
+          <strong>- Joana Santos (Kindle Unlimited)</strong>
+        </div>
+      </div>
+    </section>
+  </body>
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <!-- Sobre -->
+      <div class="footer-info">
+        <h3>Agnes Zamai</h3>
+        <p>
+          Escritora de romances contemporâneos e histórias que tocam o coração.
+        </p>
+      </div>
+
+      <!-- Contatos -->
+      <div class="footer-links">
+        <h4>Contatos</h4>
+        <ul>
+          <li>
+            <a href="mailto:ortografia.az@gmail.com">
+              📧 ortografia.az@gmail.com
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://wa.me/5518996835945"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              💬 WhatsApp Direto
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Redes -->
+      <div class="footer-social">
+        <h4>Redes Sociais</h4>
+        <div class="social-icons">
+          <a
+            href="https://www.instagram.com/agneszamaiautora/"
+            class="icon-social instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram
+          </a>
+
+          <a
+            href="https://www.facebook.com/people/Autora-Agnes-Zamai/pfbid0jnu4TczmgcTB51NFqbbkuCLL2Qy6PGymEyPoKp4j6mDVm2L69c7i3EdzP87Z97Rrl/"
+            class="icon-social facebook"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Facebook
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Linha final -->
+    <div class="footer-bottom">
+      <p>&copy; 2024 Agnes Zamai - Desenvolvido por Diego Souza</p>
+    </div>
+  </footer>
+</html>
