@@ -1,71 +1,137 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-XYFYLKK380"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-XYFYLKK380");
-    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Agnes Zamai | Escritora de Romances</title>
+
+    <meta
+      name="description"
+      content="Romances envolventes de Agnes Zamai. Descubra histórias intensas e emocionantes."
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Agnes Zamai | Escritora" />
+    <meta
+      property="og:description"
+      content="Histórias que prendem do início ao fim."
+    />
+    <meta property="og:image" content="assets/Agnes_Zamai_foto_profile.webp" />
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Preload imagem principal -->
     <link
       rel="preload"
       as="image"
       href="assets/capa_nos_bracos_do_promotor.webp"
     />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Agnes Zamai | Escritora</title>
-    <meta
-      name="description"
-      content="Conheça as obras de Agnes Zamai, autora de romances intensos e envolventes como 'Nos braços do promotor'. Compre e-books e livros físicos."
-    />
-    <meta
-      name="keywords"
-      content="Agnes Zamai, escritora, romance contemporâneo, livros de romance, Nos braços do promotor, e-books Kindle"
-    />
-    <meta name="author" content="Diego Souza" />
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:url"
-      content="https://dinspessoal-dev.github.io/projetoAgnes/"
-    />
-    <meta property="og:title" content="Agnes Zamai | Escritora" />
-    <meta
-      property="og:description"
-      content="Mergulhe em histórias de paixão e reviravoltas. Conheça o catálogo completo da autora Agnes Zamai."
-    />
-    <meta
-      property="og:image"
-      content="https://dinspessoal-dev.github.io/projetoAgnes/assets/Agnes_Zamai_foto_profile.webp"
-    />
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="Agnes Zamai | Escritora" />
-    <meta
-      property="twitter:description"
-      content="Romances que tocam o coração."
-    />
-    <meta
-      property="twitter:image"
-      content="https://dinspessoal-dev.github.io/projetoAgnes/assets/Agnes_Zamai_foto_profile.webp"
-    />
-    <link rel="stylesheet" href="style.css" />
+
+    <!-- CSS crítico -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Poppins, sans-serif;
+        background: #f9f9f9;
+        color: #222;
+      }
+
+      header {
+        background: #2c3e50;
+        padding: 1rem 5%;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        margin-left: 20px;
+        font-weight: 600;
+      }
+
+      .hero {
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+        position: relative;
+      }
+      .hero img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+      }
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .btn-primary {
+        background: #a93226;
+        color: #fff;
+        padding: 14px 32px;
+        border-radius: 6px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+    </style>
+
+    <!-- CSS não bloqueante -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Poppins:wght@300;400;600&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="style.css"
+      as="style"
+      onload="this.rel='stylesheet'"
     />
+    <noscript><link rel="stylesheet" href="style.css" /></noscript>
+
+    <!-- Fonts -->
     <link
-      rel="icon"
-      type="image/webp"
-      href="assets/capa_nove_meses_para_amar.webp"
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      onload="this.rel='stylesheet'"
     />
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Agnes Zamai",
+        "jobTitle": "Escritora",
+        "url": "https://dinspessoal-dev.github.io/projetoAgnes/"
+      }
+    </script>
   </head>
+
   <body>
     <header>
       <nav>
@@ -77,125 +143,159 @@
         </ul>
       </nav>
     </header>
+
     <main>
+      <!-- HERO -->
       <section id="home" class="hero">
-        <div class="hero-content reveal">
+        <img
+          src="assets/capa_nos_bracos_do_promotor.webp"
+          fetchpriority="high"
+          decoding="async"
+          alt="Livro Nos braços do promotor"
+        />
+
+        <div class="hero-content">
           <h1>Nos braços do promotor</h1>
-          <p class="reveal delay-1">
+
+          <p>
             Descubra o novo romance de Agnes Zamai. Uma história envolvente
             agora disponível na Amazon.
           </p>
+
           <a
             href="https://www.amazon.com.br/stores/Agnes-Zamai/author/B0D5HSHX2N"
-            class="btn-primary reveal delay-2"
+            class="btn-primary"
             target="_blank"
-            >Comprar na Amazon</a
+            rel="noopener"
           >
+            Comprar na Amazon
+          </a>
         </div>
       </section>
-      <section id="livros" class="books-grid reveal">
+
+      <section id="livros" class="books-grid">
         <h2>Minhas Obras</h2>
+
         <div class="container">
+          <!-- Livro 1 -->
           <div class="book-card">
             <img
               src="assets/capa_nos_bracos_do_promotor.webp"
-              alt="Capa do livro [Nos braços do promotor]"
               width="300"
               height="450"
               loading="lazy"
-              class="book-cover"
+              decoding="async"
+              alt="Livro Nos braços do promotor"
             />
             <h3>Nos braços do promotor</h3>
-            <p>Disponível em E-book e Físico.</p>
+            <p>Disponível em E-book e Físico</p>
+
             <div class="buttons">
               <a
-                href="https://www.amazon.com.br/Nos-bra%C3%A7os-promotor-Agnes-Zamai-ebook/dp/B0D9PT675X?ref_=ast_author_dp_rw&th=1&psc=1&dib=eyJ2IjoiMSJ9.6XVxXeeLf1EQdnUpQzixe7fJ6LRgWy_tOnntVErnZQDj63p_4GGq90OAWR8kf-lEzQihWE1UxWvTBHtszO7zgNhzKJXo1X5ByaNu7IOUgk8metfSepQcWuvA-8eMUoSMr3GvUH3v70-CdO0VK7Mgps8u9xNPtOAN3GoR87wyirrWAONDUc9Xt2TELHpB1sHiNogj9vs5GzBln7aY18Yxb8FZMqc6Y5bZeD893tv0qnM.82GFQ_-y0nTQ0uXtr7Y_c6ljgfpw7jgVo8uZCr_9i54&dib_tag=AUTHOR"
+                href="https://www.amazon.com.br/Nos-bra%C3%A7os-promotor-Agnes-Zamai-ebook/dp/B0D9PT675X"
                 class="btn-amazon"
                 target="_blank"
-                >Amazon</a
+                rel="noopener"
               >
+                Comprar na Amazon
+              </a>
             </div>
           </div>
+
+          <!-- Livro 2 -->
           <div class="book-card">
             <img
               src="assets/capa_nove_meses_para_amar.webp"
-              alt="Capa do livro [Nove meses para amar]"
               width="300"
               height="450"
               loading="lazy"
-              class="book-cover"
+              decoding="async"
+              alt="Livro Nove meses para amar"
             />
             <h3>Nove meses para amar</h3>
-            <p>Disponível em E-book e Físico.</p>
+            <p>Disponível em E-book e Físico</p>
+
             <div class="buttons">
               <a
-                href="https://www.amazon.com.br/Nove-Meses-Para-Agnes-Zamai-ebook/dp/B096WNJ54G?ref_=ast_author_dp_rw&th=1&psc=1&dib=eyJ2IjoiMSJ9.6XVxXeeLf1EQdnUpQzixe7fJ6LRgWy_tOnntVErnZQDj63p_4GGq90OAWR8kf-lEzQihWE1UxWvTBHtszO7zgNhzKJXo1X5ByaNu7IOUgk8metfSepQcWuvA-8eMUoSMr3GvUH3v70-CdO0VK7MgpghyKRv4YMxb6XJ7lMfusw-NFmNd5F_UJsDjBMP92UEiNogj9vs5GzBln7aY18Yxb8FZMqc6Y5bZeD893tv0qnM._96Ks25PUc8o1fMSdNMkWpU1omGbEDdkPm_Ems1t424&dib_tag=AUTHOR"
+                href="https://www.amazon.com.br/Nove-Meses-Para-Agnes-Zamai-ebook/dp/B096WNJ54G"
                 class="btn-amazon"
                 target="_blank"
-                >Amazon</a
+                rel="noopener"
               >
+                Comprar na Amazon
+              </a>
             </div>
           </div>
+
+          <!-- Livro 3 -->
           <div class="book-card">
             <img
               src="assets/capa_uma_jogada_arriscada.webp"
-              alt="Capa do livro [Uma jogada arriscada]"
               width="300"
               height="450"
               loading="lazy"
-              class="book-cover"
+              decoding="async"
+              alt="Livro Uma jogada arriscada"
             />
             <h3>Uma jogada arriscada</h3>
-            <p>Disponível em E-book e Físico.</p>
+            <p>Disponível em E-book e Físico</p>
+
             <div class="buttons">
               <a
-                href="https://www.amazon.com.br/Uma-jogada-arriscada-Agnes-Zamai-ebook/dp/B0DSVCLTVJ?ref_=ast_author_dp_rw&th=1&psc=1&dib=eyJ2IjoiMSJ9.6XVxXeeLf1EQdnUpQzixe7fJ6LRgWy_tOnntVErnZQDj63p_4GGq90OAWR8kf-lEzQihWE1UxWvTBHtszO7zgNhzKJXo1X5ByaNu7IOUgk8metfSepQcWuvA-8eMUoSMr3GvUH3v70-CdO0VK7Mgps8u9xNPtOAN3GoR87wyirrWAONDUc9Xt2TELHpB1sHiNogj9vs5GzBln7aY18Yxb8FZMqc6Y5bZeD893tv0qnM.82GFQ_-y0nTQ0uXtr7Y_c6ljgfpw7jgVo8uZCr_9i54&dib_tag=AUTHOR"
+                href="https://www.amazon.com.br/Uma-jogada-arriscada-Agnes-Zamai-ebook/dp/B0DSVCLTVJ"
                 class="btn-amazon"
                 target="_blank"
-                >Amazon</a
+                rel="noopener"
               >
+                Comprar na Amazon
+              </a>
             </div>
           </div>
         </div>
       </section>
-      <section id="sobre" class="about-section reveal">
+
+      <!-- SOBRE -->
+      <section id="sobre" class="about-section">
         <div class="about-container">
           <div class="about-image">
             <img
               src="assets/Agnes_Zamai_foto_profile.webp"
-              alt="Agnes Zamai - Escritora"
+              width="350"
+              height="450"
               loading="lazy"
+              decoding="async"
+              alt="Agnes Zamai"
             />
           </div>
+
           <div class="about-text">
             <h2>Sobre a Autora</h2>
             <p>
-              <strong>Agnes Zamai</strong> é uma escritora dedicada a criar
-              universos onde o romance e a intensidade se encontram...
+              <strong>Agnes Zamai</strong> escreve romances intensos que
+              conectam emoção e narrativa envolvente.
             </p>
-            <p>
-              Autora de sucessos como <em>"Nos braços do promotor"</em> e
-              <em>"Nove meses para amar"</em>...
-            </p>
+
             <div class="social-links">
-              <p>Acompanhe meu trabalho:</p>
               <a
-                href="https://www.instagram.com/agneszamaiautora/reels/"
+                href="https://www.instagram.com/agneszamaiautora/"
                 target="_blank"
                 >Instagram</a
               >
               <a
                 href="https://www.amazon.com.br/stores/Agnes-Zamai/author/B0D5HSHX2N"
                 target="_blank"
-                >Página do Autor (Amazon)</a
+                >Amazon</a
               >
             </div>
           </div>
         </div>
       </section>
     </main>
+
+    <!-- FOOTER -->
     <footer class="main-footer">
       <div class="footer-container">
+        <!-- Sobre -->
         <div class="footer-info">
           <h3>Agnes Zamai</h3>
           <p>
@@ -203,57 +303,85 @@
             coração.
           </p>
         </div>
+
+        <!-- Contatos -->
         <div class="footer-links">
           <h4>Contatos</h4>
           <ul>
             <li>
-              <a href="mailto:ortografia.az@gmail.com"
-                >📧 ortografia.az@gmail.com</a
-              >
+              <a href="mailto:ortografia.az@gmail.com">
+                📧 ortografia.az@gmail.com
+              </a>
             </li>
             <li>
-              <a href="https://wa.me/5518996835945" target="_blank"
-                >💬 WhatsApp Direto</a
+              <a
+                href="https://wa.me/5518996835945"
+                target="_blank"
+                rel="noopener"
               >
+                💬 WhatsApp Direto
+              </a>
             </li>
           </ul>
         </div>
+
+        <!-- Redes -->
         <div class="footer-social">
           <h4>Redes Sociais</h4>
           <div class="social-icons">
             <a
-              href="https://www.instagram.com/agneszamaiautora/reels/"
-              class="icon-social"
+              href="https://www.instagram.com/agneszamaiautora/"
+              class="icon-social instagram"
               target="_blank"
-              >Instagram</a
+              rel="noopener"
             >
+              Instagram
+            </a>
+
             <a
-              href="https://www.facebook.com/people/Autora-Agnes-Zamai/pfbid0jV6YC7hJgSzMnef9BUBBoyhsLySpWEUnxQbmki9H5D3whwzqUPD14QjbPNq11T5Pl/"
-              class="icon-social"
+              href="https://www.facebook.com/"
+              class="icon-social facebook"
               target="_blank"
-              >Facebook</a
+              rel="noopener"
             >
+              Facebook
+            </a>
           </div>
         </div>
       </div>
+
+      <!-- Linha final -->
       <div class="footer-bottom">
         <p>&copy; 2024 Agnes Zamai - Desenvolvido por Diego Souza</p>
       </div>
     </footer>
-  </body>
-  <script>
-    const reveals = document.querySelectorAll(".reveal");
-    function revealOnScroll() {
-      const windowHeight = window.innerHeight;
 
-      reveals.forEach((el) => {
-        const elementTop = el.getBoundingClientRect().top;
-
-        if (elementTop < windowHeight - 100) {
-          el.classList.add("active");
-        }
+    <!-- JS (idle) -->
+    <script>
+      requestIdleCallback(() => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("active");
+            }
+          });
+        });
+        document
+          .querySelectorAll(".reveal")
+          .forEach((el) => observer.observe(el));
       });
-    }
-    window.addEventListener("scroll", revealOnScroll);
-  </script>
+    </script>
+
+    <!-- Analytics com delay -->
+    <script>
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          const s = document.createElement("script");
+          s.src = "https://www.googletagmanager.com/gtag/js?id=G-XYFYLKK380";
+          s.async = true;
+          document.body.appendChild(s);
+        }, 2000);
+      });
+    </script>
+  </body>
 </html>

@@ -1,315 +1,388 @@
-/* Reset e Base */
+/* RESET ESSENCIAL */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 img {
   max-width: 100%;
-  height: auto;
   display: block;
+  height: auto;
 }
+
+/* VARIÁVEIS */
 :root {
-  --primary-color: #2c3e50;
-  --accent-color: #a93226;
-  --amazon-color: #ff9900;
-  --whatsapp-color: #25d366;
-  --text-color: rgb(255, 255, 255);
-  --bg-light: #f9f9f9;
+  --primary: #2c3e50;
+  --accent: #a93226;
+  --bg: #f9f9f9;
+  --text: #222;
 }
+
+/* BASE */
 body {
   font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  color: var(--text);
   line-height: 1.6;
-  color: var(--text-color);
-  background-color: var(--bg-light);
 }
+
 h1,
 h2,
 h3 {
   font-family: "Playfair Display", serif;
 }
-/* Header */
-header {
-  background: var(--primary-color);
-  padding: 1rem 5%;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+
+/* ===== PERFORMANCE (ELITE) ===== */
+
+/* Render sob demanda */
+section {
+  content-visibility: auto;
+  contain-intrinsic-size: 600px;
 }
+
+/* Evita custo desnecessário */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ===== HEADER ===== */
+header {
+  background: var(--primary);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem 5%;
 }
+
+/* LOGO CORRIGIDA */
+.logo {
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
 nav ul {
   display: flex;
   list-style: none;
 }
-nav ul li a {
-  text-decoration: none;
+
+nav a {
   color: white;
+  text-decoration: none;
   margin-left: 20px;
   font-weight: 600;
-  transition: 0.3s;
+  transition: color 0.3s ease;
 }
-nav ul li a:hover {
-  color: var(--accent-color);
+
+nav a:hover {
+  color: var(--accent);
 }
-/* Hero */
-.hero {
-  height: 70vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("assets/capa_nos_bracos_do_promotor.webp");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+
+/* ===== HERO ===== */
+.hero-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
   color: white;
 }
-.hero h1 {
-  font-size: 3rem;
+
+.hero-content p {
+  max-width: 500px;
+  margin: 0 auto;
+  color: white;
+  font-size: 1.1rem;
 }
-/* Botões */
+
+/* ===== BOTÃO PRINCIPAL ===== */
 .btn-primary {
   display: inline-block;
-  background: var(--accent-color);
+  background: var(--accent);
   color: white;
   padding: 12px 30px;
-  text-decoration: none;
   border-radius: 5px;
+  text-decoration: none;
+  font-weight: 700;
   margin-top: 20px;
-  font-weight: bold;
-  transition: 0.3s;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
+
 .btn-primary:hover {
-  background-color: #8e241a;
+  background: #8e241a;
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
-/* Livros */
+
+/* ===== BOTÕES ===== */
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn-amazon {
+  color: #ff9900;
+  border: 1px solid #ff9900;
+  padding: 10px 18px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.btn-amazon:hover {
+  background: #ff9900;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+/* ===== LIVROS ===== */
 .books-grid {
   padding: 60px 5%;
   text-align: center;
 }
+
+/* GRID */
 .container {
   display: grid;
-  /* Define que cada coluna terá no mínimo 280px e no máximo 1 fração do espaço */
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 30px;
   margin-top: 40px;
-  justify-content: center; /* Centraliza o grupo de cards na tela */
+  justify-content: center;
 }
+
+/* CARD */
 .book-card {
   background: white;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 320px;
+  margin: 0 auto;
+
+  /* sombra base */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+  /* performance */
+  contain: layout paint;
+  will-change: transform;
+
+  /* animação suave */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+}
 
-  /* SOLUÇÃO: Força todos os cards a terem a mesma largura máxima e mínima no grid */
-  width: 100%;
-  max-width: 320px; /* Ajuste para o tamanho que achar melhor */
-  margin: 0 auto;
-}
-/* Garante que o link longo não quebre o layout */
-.btn-amazon {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  max-width: 100%;
-}
-/* Garante que o link longo não quebre o layout */
-.btn-amazon {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  max-width: 100%;
-}
+/* HOVER CARD (DESTAQUE) */
 .book-card:hover {
-  transform: translateY(-8px) scale(1.02);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
-/* O card agora é o container flexível */
-.book-card {
-  display: flex;
-  flex-direction: column; /* Organiza os itens em coluna (um abaixo do outro) */
-  align-items: center; /* Centraliza todos os itens horizontalmente */
-  text-align: center; /* Garante que o texto também fique centralizado */
-  padding: 20px;
-  background: #fff; /* Ajuste conforme sua paleta */
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-/* Estilo específico da imagem para não flutuar */
-.book-cover {
-  display: block; /* Remove qualquer comportamento de texto da imagem */
-  max-width: 100%; /* Não deixa a imagem ser maior que o card */
-  height: auto; /* Mantém a proporção correta */
-  margin-bottom: 15px; /* Espaço entre a imagem e o título */
+
+/* IMAGEM */
+.book-card img {
   border-radius: 5px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
 }
+
+/* ZOOM NA IMAGEM */
+.book-card:hover img {
+  transform: scale(1.03);
+}
+
+/* TÍTULO */
 .book-card h3 {
-  color: var(--primary-color);
+  margin-top: 10px;
+  color: var(--primary);
 }
-/* Container dos botões */
+
+/* TEXTO */
+.book-card p {
+  margin-top: 5px;
+  font-size: 0.95rem;
+}
+
+/* BOTÕES */
 .buttons {
   display: flex;
   justify-content: center;
-  gap: 25px; /* Aumentamos o espaço entre os botões */
   margin-top: 20px;
-  flex-wrap: wrap; /* No celular, se não couber, um pula para baixo do outro */
 }
-/* Ajuste nos botões de compra (Amazon e WhatsApp) */
-.btn-amazon,
-.btn-whatsapp {
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-  padding: 12px 20px; /* Adicionamos preenchimento para aumentar a área de clique */
-  border: 1px solid transparent; /* Reserva espaço para borda no hover */
-  min-width: 120px; /* Garante que o botão tenha um tamanho bom para tocar */
-  text-align: center;
-}
-/* Opcional: Adicionar uma borda sutil para definir melhor o limite do botão */
+
+/* BOTÃO AMAZON */
 .btn-amazon {
-  color: var(--amazon-color);
-  border: 1px solid var(--amazon-color);
+  color: #ff9900;
+  border: 1px solid #ff9900;
+  padding: 10px 18px;
   border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
-/* Sobre */
+
+.btn-amazon:hover {
+  background: #ff9900;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+/* ===== SOBRE ===== */
 .about-section {
   padding: 80px 5%;
   background: white;
 }
+
 .about-container {
   display: flex;
+  gap: 40px;
   align-items: center;
-  gap: 50px;
   max-width: 1000px;
   margin: 0 auto;
+  contain: layout paint;
 }
+
+/* CONTAINER DA IMAGEM (para efeito completo) */
+.about-image {
+  display: inline-block;
+  border-radius: 12px;
+
+  /* performance */
+  will-change: transform;
+
+  /* animação */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* IMAGEM */
 .about-image img {
-  width: 350px;
-  height: 450px;
-  object-fit: cover;
-  border-radius: 15px;
-  box-shadow: 20px 20px 0 var(--primary-color);
-  transition: 0.3s;
+  width: 320px;
+  border-radius: 12px;
+
+  /* sombra base */
+  box-shadow: 8px 8px 0 var(--primary);
+
+  /* animação */
+  transition: transform 0.3s ease;
 }
-.about-image img:hover {
+
+/* HOVER (IGUAL AOS LIVROS) */
+.about-image:hover {
+  transform: translateY(-8px);
+}
+
+.about-image:hover img {
   transform: scale(1.03);
+  box-shadow: 12px 12px 0 var(--primary);
 }
+
+/* TEXTO */
 .about-text h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: var(--primary-color);
-}
-.about-text p {
+  font-size: 2.2rem;
   margin-bottom: 15px;
-  font-size: 1.1rem;
-  color: #555;
+  color: var(--primary);
 }
-/* Social */
+
+.about-text p {
+  margin-bottom: 10px;
+}
+
+/* ===== SOCIAL ===== */
 .social-links {
-  margin-top: 30px;
+  margin-top: 20px;
 }
+
 .social-links a {
-  margin-right: 10px;
   text-decoration: none;
-  color: var(--accent-color);
-  border: 1px solid var(--accent-color);
-  padding: 8px 15px;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 8px 14px;
   border-radius: 5px;
-  transition: 0.3s;
+  margin-right: 10px;
+  transition: all 0.3s ease;
 }
+
 .social-links a:hover {
-  background: var(--accent-color);
+  background: var(--accent);
   color: white;
 }
-/* Footer */
+
+/* FOOTER ELITE */
 .main-footer {
-  background: #2c3e50;
+  background: var(--primary);
   color: white;
   padding: 50px 5% 20px;
 }
+
 .footer-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 40px;
+  margin-bottom: 30px;
+  contain: layout paint;
 }
+
+.footer-info p {
+  margin-top: 10px;
+  color: #ccc;
+}
+
+.footer-links ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
 .footer-links a {
   color: #ccc;
   text-decoration: none;
-  transition: 0.3s;
+  transition: color 0.3s ease;
 }
+
 .footer-links a:hover {
-  color: var(--accent-color);
+  color: var(--accent);
 }
-/* RESPONSIVO */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-  }
 
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .about-container {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-/* ANIMAÇÕES (SCROLL) */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 0.8s ease;
-}
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-/* Delay */
-.delay-1 {
-  transition-delay: 0.2s;
-}
-.delay-2 {
-  transition-delay: 0.4s;
-}
-.delay-3 {
-  transition-delay: 0.6s;
-}
-/* Container das Redes Sociais no Footer */
 .footer-social h4 {
-  margin-bottom: 20px;
-  font-size: 1.2rem;
-  font-family: "Playfair Display", serif;
+  margin-bottom: 10px;
 }
+
 .social-icons {
   display: flex;
-  gap: 15px; /* Espaço entre os botões */
-  flex-wrap: wrap; /* Garante que não quebre em telas muito pequenas */
+  gap: 10px;
+  flex-wrap: wrap;
 }
-/* Estilização Geral dos Botões de Redes Sociais */
-.icon-social {
-  display: inline-block;
-  padding: 10px 20px;
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Borda sutil branca */
-  border-radius: 30px; /* Bordas arredondadas elegantes */
+
+.social-icons a {
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
   color: white;
   text-decoration: none;
   font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.4s ease; /* Transição suave para cores e sombras */
-  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
 }
-/* Efeito Hover Personalizado para Instagram */
-.icon-social[href*="instagram"]:hover {
+
+.icon-social {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 30px;
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Instagram */
+.icon-social.instagram:hover {
   background: linear-gradient(
     45deg,
     #f09433,
@@ -318,14 +391,50 @@ nav ul li a:hover {
     #cc2366,
     #bc1888
   );
-  border-color: transparent;
   box-shadow: 0 4px 15px rgba(220, 39, 67, 0.4);
-  transform: translateY(-3px); /* Leve pulo para cima */
+  transform: translateY(-3px);
 }
-/* Efeito Hover Personalizado para Facebook */
-.icon-social[href*="facebook"]:hover {
+
+/* Facebook */
+.icon-social.facebook:hover {
   background: #1877f2;
-  border-color: transparent;
   box-shadow: 0 4px 15px rgba(24, 119, 242, 0.4);
   transform: translateY(-3px);
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 15px;
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+/* ===== ANIMAÇÕES ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  will-change: transform, opacity;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
 }
