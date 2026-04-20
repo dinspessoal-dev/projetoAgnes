@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dinspessoal-dev.github.io/projetoAgnes/sitemap.xml
