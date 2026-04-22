@@ -13,6 +13,8 @@
 
     <title>Agnes Zamai | Escritora de Romances</title>
 
+    <link rel="icon" type="image/png" href="assets/favicon.ico" />
+
     <meta
       name="description"
       content="Romances envolventes de Agnes Zamai. Descubra histórias intensas e emocionantes."
@@ -389,8 +391,12 @@
 
       <!-- Linha final -->
       <div class="footer-bottom">
-        <p>&copy; 2024 Agnes Zamai - Desenvolvido por Diego Souza</p>
+        <p>&copy; <span id="current-year"></span> Agnes Zamai - Desenvolvido por Diego Souza</p>
       </div>
     </footer>
+    <script>
+      // Atualiza o ano automaticamente
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
