@@ -138,6 +138,9 @@ nav a.active::after {
 }
 
 /* HERO / PAGE HEADER */
+.hero img {
+  aspect-ratio: 16 / 9;
+}
 .page-header-img {
   height: 45vh;
   display: flex;

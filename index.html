@@ -60,6 +60,12 @@
       as="style"
       onload="this.rel='stylesheet'"
     />
+    <link
+      rel="stylesheet"
+      href="style.css"
+      media="print"
+      onload="this.media='all'"
+    />
     <noscript><link rel="stylesheet" href="style.css" /></noscript>
 
     <!-- Fonts -->
@@ -107,6 +113,9 @@
           src="assets/capa_nos_bracos_do_promotor.webp"
           fetchpriority="high"
           decoding="async"
+          loading="eager"
+          width="1200"
+          height="800"
           alt="Capa do livro Nos braços do promotor de Agnes Zamai"
         />
 
@@ -250,18 +259,11 @@
       </section>
     </main>
     <script>
-      window.addEventListener("load", () => {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add("active");
-            }
-          });
-        });
-
-        document
-          .querySelectorAll(".reveal")
-          .forEach((el) => observer.observe(el));
+      requestIdleCallback(() => {
+        const s = document.createElement("script");
+        s.src = "https://www.googletagmanager.com/gtag/js?id=G-XYFYLKK380";
+        s.async = true;
+        document.body.appendChild(s);
       });
     </script>
 

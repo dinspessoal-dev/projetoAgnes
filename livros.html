@@ -6,37 +6,37 @@
     <title>Livros | Agnes Zamai</title>
 
     <link rel="icon" type="image/png" href="assets/favicon.ico" />
-    
+
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <script>
     // Carrega header
     fetch("header.html")
-      .then(res => res.text())
-      .then(data => {
+      .then((res) => res.text())
+      .then((data) => {
         document.getElementById("header").innerHTML = data;
-  
+
         // marca menu ativo automaticamente
         const currentPage = document.body.dataset.page;
         const links = document.querySelectorAll("nav a");
-  
-        links.forEach(link => {
+
+        links.forEach((link) => {
           if (link.dataset.page === currentPage) {
             link.classList.add("active");
           }
         });
       });
-  
+
     // Carrega footer
     fetch("footer.html")
-      .then(res => res.text())
-      .then(data => {
+      .then((res) => res.text())
+      .then((data) => {
         document.getElementById("footer").innerHTML = data;
       });
   </script>
 
-<body data-page="livros">
+  <body data-page="livros">
     <div id="header"></div>
 
     <section class="page-header-img">
@@ -59,9 +59,10 @@
           <img
             src="assets/capa_apostando_no_amor.webp"
             alt="Capa do livro Apostando no amor de Agnes Zamai"
-            loading="lazy"
             width="250"
             height="360"
+            loading="lazy"
+            decoding="async"
           />
           <div class="stars" aria-label="Avaliação: 5 de 5 estrelas">★★★★★</div>
           <h3>Apostando no Amor</h3>
@@ -80,9 +81,10 @@
           <img
             src="assets/capa_as jardas que me levam até você.webp"
             alt="Capa do livro As jardas que me levam até você de Agnes Zamai"
-            loading="lazy"
             width="250"
             height="360"
+            loading="lazy"
+            decoding="async"
           />
           <div class="stars" aria-label="Avaliação: 4.5 de 5 estrelas">
             ★★★★★
@@ -106,9 +108,10 @@
           <img
             src="assets/capa_borboletas_sao_azuis.webp"
             alt="Capa do livro Borboletas são azuis de Agnes Zamai"
-            loading="lazy"
             width="250"
             height="360"
+            loading="lazy"
+            decoding="async"
           />
           <div class="stars" aria-label="Avaliação: 4.5 de 5 estrelas">
             ★★★★★
@@ -132,9 +135,10 @@
           <img
             src="assets/capa_com_amor_Anna.webp"
             alt="Capa do livro Com amor, Anna de Agnes Zamai"
-            loading="lazy"
             width="250"
             height="360"
+            loading="lazy"
+            decoding="async"
           />
           <div class="stars" aria-label="Avaliação: 4.5 de 5 estrelas">
             ★★★★★
@@ -155,9 +159,10 @@
           <img
             src="assets/capa_destinhos_em_ruinas.webp"
             alt="Capa do livro Destinos em ruínas de Agnes Zamai"
-            loading="lazy"
             width="250"
             height="360"
+            loading="lazy"
+            decoding="async"
           />
           <div class="stars" aria-label="Avaliação: 4.5 de 5 estrelas">
             ★★★★★
@@ -181,9 +186,10 @@
           <img
             src="assets/capa_dois_presentes_de_natal.webp"
             alt="Capa do livro Dois presentes de natal de Agnes Zamai"
-            loading="lazy"
             width="250"
             height="360"
+            loading="lazy"
+            decoding="async"
           />
           <div class="stars" aria-label="Avaliação: 4.5 de 5 estrelas">
             ★★★★★
@@ -207,9 +213,10 @@
           <img
             src="assets/capa_faca_um_pedido_charlie.webp"
             alt="Capa do Livro Faça um pedido, Charlie de Agnes Zamai"
-            loading="lazy"
             width="250"
             height="360"
+            loading="lazy"
+            decoding="async"
           />
           <div class="stars" aria-label="Avaliação: 4.5 de 5 estrelas">
             ★★★★★
@@ -233,9 +240,10 @@
           <img
             src="assets/capa_faca_um_pedido_evelyn.webp"
             alt="Capa do livro Faça um pedido, Evelyn de Agnes Zamai"
-            loading="lazy"
             width="250"
             height="360"
+            loading="lazy"
+            decoding="async"
           />
           <div class="stars" aria-label="Avaliação: 4.5 de 5 estrelas">
             ★★★★★
@@ -259,9 +267,10 @@
           <img
             src="assets/capa_mesmo_ que_nos_destrua.webp"
             alt="Capa do livro Mesmo que nos destrua de Agnes Zamai"
-            loading="lazy"
             width="250"
             height="360"
+            loading="lazy"
+            decoding="async"
           />
           <div class="stars" aria-label="Avaliação: 4.5 de 5 estrelas">
             ★★★★★
@@ -282,9 +291,10 @@
           <img
             src="assets/capa_modus_operand_ do_amor.webp"
             alt="Capa do livro Modus operand do amor de Agnes Zamai"
-            loading="lazy"
             width="250"
             height="360"
+            loading="lazy"
+            decoding="async"
           />
           <div class="stars" aria-label="Avaliação: 4.5 de 5 estrelas">
             ★★★★★
@@ -305,9 +315,10 @@
           <img
             src="assets/capa_nos_bracos_do_promotor.webp"
             alt="Capa do livro Nos braços do promotor de Agnes Zamai"
-            loading="lazy"
             width="250"
             height="360"
+            loading="lazy"
+            decoding="async"
           />
           <div class="stars" aria-label="Avaliação: 4.5 de 5 estrelas">
             ★★★★★
@@ -331,9 +342,10 @@
           <img
             src="assets/capa_nove_meses_para_amar.webp"
             alt="Capa do livro Nove meses para amar de Agnes Zamai"
-            loading="lazy"
             width="250"
             height="360"
+            loading="lazy"
+            decoding="async"
           />
           <div class="stars" aria-label="Avaliação: 4.5 de 5 estrelas">
             ★★★★★
@@ -357,9 +369,10 @@
           <img
             src="assets/capa_o_natal_que_nos_salvou.webp"
             alt="Capa do livro O natal que nos salvou de Agnes Zamai"
-            loading="lazy"
             width="250"
             height="360"
+            loading="lazy"
+            decoding="async"
           />
           <div class="stars" aria-label="Avaliação: 4.5 de 5 estrelas">
             ★★★★★
@@ -383,9 +396,10 @@
           <img
             src="assets/capa_o_para_sempre_de_nos_dois.webp"
             alt="Capa do livro O para sempre de nos dois de Agnes Zamai"
-            loading="lazy"
             width="250"
             height="360"
+            loading="lazy"
+            decoding="async"
           />
           <div class="stars" aria-label="Avaliação: 4.5 de 5 estrelas">
             ★★★★★
@@ -406,9 +420,10 @@
           <img
             src="assets/capa_o_pesadelo_do_papai.webp"
             alt="Capa do livro O pesadelo do papai de Agnes Zamai"
-            loading="lazy"
             width="250"
             height="360"
+            loading="lazy"
+            decoding="async"
           />
           <div class="stars" aria-label="Avaliação: 4.5 de 5 estrelas">
             ★★★★★
@@ -431,9 +446,10 @@
           <img
             src="assets/capa_socorro_minha_sogra_tem_um_segredo.webp"
             alt="Capa do livro Socorro minha sogra tem um segredo de Agnes Zamai"
-            loading="lazy"
             width="250"
             height="360"
+            loading="lazy"
+            decoding="async"
           />
           <div class="stars" aria-label="Avaliação: 4.5 de 5 estrelas">
             ★★★★★
@@ -456,9 +472,10 @@
           <img
             src="assets/capa_tenue_a_linha_entre_o_certo_e_o_errado.webp"
             alt="Capa do livro Tênue - A linha entre o certo e o errado de Agnes Zamai"
-            loading="lazy"
             width="250"
             height="360"
+            loading="lazy"
+            decoding="async"
           />
           <div class="stars" aria-label="Avaliação: 4.5 de 5 estrelas">
             ★★★★★
@@ -479,9 +496,10 @@
           <img
             src="assets/capa_todos_os_porques_de_voce.webp"
             alt="Capa do livro Todos os porquês de você de Agnes Zamai"
-            loading="lazy"
             width="250"
             height="360"
+            loading="lazy"
+            decoding="async"
           />
           <div class="stars" aria-label="Avaliação: 4.5 de 5 estrelas">
             ★★★★★
@@ -502,9 +520,10 @@
           <img
             src="assets/capa_um_acordo_com_o_vizinho_cafajeste.webp"
             alt="Capa do livro Um acordo com o vizinho cafajeste de Agnes Zamai"
-            loading="lazy"
             width="250"
             height="360"
+            loading="lazy"
+            decoding="async"
           />
           <div class="stars" aria-label="Avaliação: 4.5 de 5 estrelas">
             ★★★★★
@@ -528,9 +547,10 @@
           <img
             src="assets/capa_um_natal_em_nova_iorque.webp"
             alt="Capa do livro Um natal em nova iorque de Agnes Zamai"
-            loading="lazy"
             width="250"
             height="360"
+            loading="lazy"
+            decoding="async"
           />
           <div class="stars" aria-label="Avaliação: 4.5 de 5 estrelas">
             ★★★★★
@@ -551,9 +571,10 @@
           <img
             src="assets/capa_uma_baba_para_a_filha_do_magnata.webp"
             alt="Capa do livro Uma babá para a filha do magnata de Agnes Zamai"
-            loading="lazy"
             width="250"
             height="360"
+            loading="lazy"
+            decoding="async"
           />
           <div class="stars" aria-label="Avaliação: 4.5 de 5 estrelas">
             ★★★★★
@@ -576,9 +597,10 @@
           <img
             src="assets/capa_uma_jogada_arriscada.webp"
             alt="Capa do livro Uma jogada arriscada de Agnes Zamai"
-            loading="lazy"
             width="250"
             height="360"
+            loading="lazy"
+            decoding="async"
           />
           <div class="stars" aria-label="Avaliação: 4.5 de 5 estrelas">
             ★★★★★
@@ -623,7 +645,8 @@
     <div id="footer"></div>
     <script>
       // Atualiza o ano automaticamente
-      document.getElementById('current-year').textContent = new Date().getFullYear();
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
     </script>
   </body>
 </html>
