@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+      onload="this.rel='stylesheet'"
+    />
+
     <!-- Preload imagem principal -->
     <link
       rel="preload"
@@ -44,84 +51,6 @@
         background: #f9f9f9;
         color: #222;
       }
-
-      header {
-        background: #2c3e50;
-        padding: 1rem 5%;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-      }
-      nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      nav ul {
-        display: flex;
-        list-style: none;
-      }
-      nav a {
-        color: #fff;
-        text-decoration: none;
-        margin-left: 20px;
-        font-weight: 600;
-      }
-
-      /* ✅ HERO AJUSTADO */
-      .hero {
-        height: 45vh; /* corrigido */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: #fff;
-        position: relative;
-        padding: 1rem 5%; /* igual ao outro */
-        overflow: hidden;
-      }
-
-      .hero img {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .hero::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.6);
-      }
-
-      .hero-content {
-        position: relative;
-        z-index: 2;
-        max-width: 900px;
-      }
-
-      .hero-content h1 {
-        font-size: clamp(1.6rem, 4vw, 3rem);
-        margin-bottom: 10px;
-      }
-
-      .hero-content p {
-        font-size: 1rem;
-        margin-top: 5px;
-      }
-
-      .btn-primary {
-        background: #a93226;
-        color: #fff;
-        padding: 14px 32px;
-        border-radius: 6px;
-        font-weight: 700;
-        text-decoration: none;
-        margin-top: 20px;
-        display: inline-block;
-      }
     </style>
 
     <!-- CSS não bloqueante -->
@@ -142,17 +71,34 @@
     />
   </head>
 
-  <body>
-    <header>
-      <nav>
-        <div class="logo">Agnes Zamai</div>
-        <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="livros.html">Livros</a></li>
-          <li><a href="sobre.html">Sobre</a></li>
-        </ul>
-      </nav>
-    </header>
+  <script>
+    // Carrega header
+    fetch("header.html")
+      .then((res) => res.text())
+      .then((data) => {
+        document.getElementById("header").innerHTML = data;
+
+        // marca menu ativo automaticamente
+        const currentPage = document.body.dataset.page;
+        const links = document.querySelectorAll("nav a");
+
+        links.forEach((link) => {
+          if (link.dataset.page === currentPage) {
+            link.classList.add("active");
+          }
+        });
+      });
+
+    // Carrega footer
+    fetch("footer.html")
+      .then((res) => res.text())
+      .then((data) => {
+        document.getElementById("footer").innerHTML = data;
+      });
+  </script>
+
+  <body data-page="home">
+    <div id="header"></div>
 
     <main>
       <!-- HERO -->
@@ -161,7 +107,7 @@
           src="assets/capa_nos_bracos_do_promotor.webp"
           fetchpriority="high"
           decoding="async"
-          alt="Livro Nos braços do promotor"
+          alt="Capa do livro Nos braços do promotor de Agnes Zamai"
         />
 
         <div class="hero-content">
@@ -178,7 +124,7 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            Comprar na Amazon
+            Comprar agora na Amazon
           </a>
         </div>
       </section>
@@ -195,7 +141,7 @@
               height="450"
               loading="lazy"
               decoding="async"
-              alt="Livro Nos braços do promotor"
+              alt="Capa do livro Nos braços do promotor de Agnes Zamai"
             />
             <h3>Nos braços do promotor</h3>
             <p>Disponível em E-book e Físico</p>
@@ -207,7 +153,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Comprar o livro Nos braços do promotor na Amazon"
-                >Comprar na Amazon</a
+                >Comprar agora na Amazon</a
               >
             </div>
           </div>
@@ -220,7 +166,7 @@
               height="450"
               loading="lazy"
               decoding="async"
-              alt="Livro Nove meses para amar"
+              alt="Capa do livro Nove meses para amar de Agnes Zamai"
             />
             <h3>Nove meses para amar</h3>
             <p>Disponível em E-book e Físico</p>
@@ -232,7 +178,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Comprar o livro Nove meses para amar"
-                >Comprar na Amazon</a
+                >Comprar agora na Amazon</a
               >
             </div>
           </div>
@@ -245,7 +191,7 @@
               height="450"
               loading="lazy"
               decoding="async"
-              alt="Livro Uma jogada arriscada"
+              alt="Capa do livro Uma jogada arriscada de Agnes Zamai"
             />
             <h3>Uma jogada arriscada</h3>
             <p>Disponível em E-book e Físico</p>
@@ -257,7 +203,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Comprar o livro Uma jogada arriscada"
-                >Comprar na Amazon</a
+                >Comprar agora na Amazon</a
               >
             </div>
           </div>
@@ -274,7 +220,7 @@
               height="450"
               loading="lazy"
               decoding="async"
-              alt="Agnes Zamai"
+              alt="Foto profile de Agnes Zamai"
             />
           </div>
 
@@ -303,9 +249,8 @@
         </div>
       </section>
     </main>
-    <!-- JS (idle) -->
     <script>
-      requestIdleCallback(() => {
+      window.addEventListener("load", () => {
         const observer = new IntersectionObserver((entries) => {
           entries.forEach((e) => {
             if (e.isIntersecting) {
@@ -313,6 +258,7 @@
             }
           });
         });
+
         document
           .querySelectorAll(".reveal")
           .forEach((el) => observer.observe(el));
@@ -332,71 +278,11 @@
     </script>
 
     <!-- FOOTER -->
-    <footer class="main-footer">
-      <div class="footer-container">
-        <!-- Sobre -->
-        <div class="footer-info">
-          <h3>Agnes Zamai</h3>
-          <p>
-            Escritora de romances contemporâneos e histórias que tocam o
-            coração.
-          </p>
-        </div>
-
-        <!-- Contatos -->
-        <div class="footer-links">
-          <h4>Contatos</h4>
-          <ul>
-            <li>
-              <a href="mailto:ortografia.az@gmail.com">
-                📧 ortografia.az@gmail.com
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://wa.me/5518996835945"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                💬 WhatsApp Direto
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Redes -->
-        <div class="footer-social">
-          <h4>Redes Sociais</h4>
-          <div class="social-icons">
-            <a
-              href="https://www.instagram.com/agneszamaiautora/"
-              class="icon-social instagram"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Instagram
-            </a>
-
-            <a
-              href="https://www.facebook.com/people/Autora-Agnes-Zamai/pfbid0jnu4TczmgcTB51NFqbbkuCLL2Qy6PGymEyPoKp4j6mDVm2L69c7i3EdzP87Z97Rrl/"
-              class="icon-social facebook"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Facebook
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Linha final -->
-      <div class="footer-bottom">
-        <p>&copy; <span id="current-year"></span> Agnes Zamai - Desenvolvido por Diego Souza</p>
-      </div>
-    </footer>
+    <div id="footer"></div>
     <script>
       // Atualiza o ano automaticamente
-      document.getElementById('current-year').textContent = new Date().getFullYear();
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
     </script>
   </body>
 </html>
